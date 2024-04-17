@@ -1,16 +1,16 @@
 # CESE-2024
 ## Curso de Especialización en Sistemas Embebidos 2024.
-
+## 
 ## Materia: Programación de microprocesadores.
 ## Alumno: Mendoza, Hector Dante.
-
+### 
 ### Conexiones en los modulos;
 ### HC-SR04;
 ### VCC: 5V
 ### GND: GND
 ### TRIGGER: PA_3
 ### ECHO; PE_9
-
+### 
 ### LCD HD44780;
 ### VCC: 5V
 ### GND: GND
