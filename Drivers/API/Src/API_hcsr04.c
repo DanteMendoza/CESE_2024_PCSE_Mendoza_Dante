@@ -7,50 +7,10 @@
  */
 
 #include <API_hcsr04.h>
+#include <API_hcsr04_port.h>
 #include "tim.h"
 
-uint32_t t_ini = 0;
-uint32_t t_end = 0;
-uint32_t t_time = 0;
-uint16_t dist = 0;
-uint8_t flag_captured = 0;
-
-/**
- * @brief Callback de captura de señal para el temporizador de hardware (TIM).
- * Esta función se llama automáticamente cuando se produce una captura de señal en el temporizador de hardware.
- * Calcula la distancia utilizando la señal capturada y actualiza la variable global 'dist'.
- * No se llama directamente desde el código; se llama automáticamente por el hardware del temporizador.
- * @param htim: Puntero al controlador de temporizador de hardware que generó la interrupción.
- * @return None.
- */
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) {
-	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
-		if (flag_captured == 0) {
-			t_ini = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-			flag_captured = 1;
-			__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1,
-					TIM_INPUTCHANNELPOLARITY_FALLING);
-		}
-
-		else if (flag_captured == 1) {
-			t_end = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-			__HAL_TIM_SetCounter(htim, 0);
-
-			if (t_end > t_ini) {
-				t_time = t_end - t_ini;
-			} else if (t_ini > t_end) {
-				t_time = (0xFFFF - t_ini) + t_end;
-			}
-
-			dist = (uint16_t) ((t_time * 0.034) / 2);
-			flag_captured = 0;
-
-			__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1,
-					TIM_INPUTCHANNELPOLARITY_RISING);
-			__HAL_TIM_DISABLE_IT(&htim1, TIM_IT_CC1);
-		}
-	}
-}
+uint16_t dists = 0;
 
 /**
  * @brief Inicializa el sensor de distancia ultrasónico HC-SR04.
@@ -61,7 +21,6 @@ void HCSR04_Init(void) {
 	HAL_GPIO_WritePin(Trigger_GPIO_Port, Trigger_Pin, GPIO_PIN_RESET);
 	HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
 }
-
 
 /**
  * @brief Obtiene la distancia medida por el sensor HC-SR04.
@@ -80,5 +39,5 @@ uint16_t HCSR04_Get_Distance(void) {
 	 *  procesar la señal capturada y actualizar la distancia medida.
 	 */
 	__HAL_TIM_ENABLE_IT(&htim1, TIM_IT_CC1);
-	return dist;
+	return dists;
 }

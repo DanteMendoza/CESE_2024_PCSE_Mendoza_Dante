@@ -1,3 +1,2 @@
-../Drivers/API/Src/API_hcsr04.c:26:6:HAL_TIM_IC_CaptureCallback	16	static
-../Drivers/API/Src/API_hcsr04.c:60:6:HCSR04_Init	8	static
-../Drivers/API/Src/API_hcsr04.c:72:10:HCSR04_Get_Distance	8	static
+../Drivers/API/Src/API_hcsr04.c:20:6:HCSR04_Init	8	static
+../Drivers/API/Src/API_hcsr04.c:31:10:HCSR04_Get_Distance	8	static

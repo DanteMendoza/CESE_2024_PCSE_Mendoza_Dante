@@ -1,8 +1,6 @@
-Drivers/API/Src/API_hcsr04.o: ../Drivers/API/Src/API_hcsr04.c \
- C:/Proyectos/STM32CubeIDE/CESE_2024_PdM_Mendoza_Dante/TP_Final/Drivers/API/Inc/API_hcsr04.h \
- C:/Proyectos/STM32CubeIDE/CESE_2024_PdM_Mendoza_Dante/TP_Final/Drivers/API/Inc/API_hcsr04_port.h \
- ../Core/Inc/tim.h ../Core/Inc/main.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+Drivers/API/Src/i2c.o: ../Drivers/API/Src/i2c.c \
+ C:/Proyectos/STM32CubeIDE/CESE_2024_PdM_Mendoza_Dante/TP_Final/Drivers/API/Inc/i2c.h \
+ ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -31,9 +29,7 @@ Drivers/API/Src/API_hcsr04.o: ../Drivers/API/Src/API_hcsr04.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-C:/Proyectos/STM32CubeIDE/CESE_2024_PdM_Mendoza_Dante/TP_Final/Drivers/API/Inc/API_hcsr04.h:
-C:/Proyectos/STM32CubeIDE/CESE_2024_PdM_Mendoza_Dante/TP_Final/Drivers/API/Inc/API_hcsr04_port.h:
-../Core/Inc/tim.h:
+C:/Proyectos/STM32CubeIDE/CESE_2024_PdM_Mendoza_Dante/TP_Final/Drivers/API/Inc/i2c.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:

@@ -1,7 +1,7 @@
 # CESE-2024
 ## Curso de Especialización en Sistemas Embebidos 2024.
 ## 
-## Materia: Programación de microprocesadores.
+## Materia: Protocolos de comunicación en sistemas embebidos.
 ## Alumno: Mendoza, Hector Dante.
 ### 
 ### Conexiones en los modulos;
